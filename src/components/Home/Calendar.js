@@ -1,4 +1,3 @@
-import { isWithinInterval } from 'date-fns';
 import React, { useState } from 'react';
 import {  ClassNames, DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
@@ -12,7 +11,7 @@ const Calendar = () => {
     head: 'custom-head'
   };
   return (
-      <div className='w-100 grid justify-items-center items-center mt-28'>
+      <div className='w-100 grid justify-items-center items-center mt-28 mb-8'>
           <style>{`.custom-head { color: yellow }`}</style>
       <DayPicker
          styles={{
@@ -24,7 +23,7 @@ const Calendar = () => {
        selected={date}
        onSelect={setDate}
       ></DayPicker>
-         <p className='text-white text-2xl'>You selected <span className='text-amber-400'>{format(date, 'PP')}</span>.</p>
+         <p className='text-white text-2xl'>You selected <span className='text-yellow-300'>{format(date, 'PP')}</span>.</p>
     </div>
   );
 };
