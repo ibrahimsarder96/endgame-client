@@ -11,7 +11,7 @@ const Calendar = () => {
     head: 'custom-head'
   };
   return (
-      <div className='w-100 grid justify-items-center items-center mt-28 mb-8'>
+      <div className='w-100 grid justify-items-center items-center mt-16 mb-8'>
           <style>{`.custom-head { color: yellow }`}</style>
       <DayPicker
          styles={{
