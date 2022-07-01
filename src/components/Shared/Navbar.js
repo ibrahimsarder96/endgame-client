@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 
 const Navbar = () => {
   const menuItems = <>
-        <li className='text-white'><Link to='/'>Home</Link></li>
         <li className='text-white'><Link to='/task'>Completed Tasks</Link></li>
         <li className='text-white'><Link to='/todo'>To-Do</Link></li>
         <li className='text-white'><Link to='/calendar'>Calendar</Link></li>

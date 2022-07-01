@@ -1,9 +1,15 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
+import TodoList from './TodoList';
+
 
 const Todo = () => {
+ 
+
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  
   const onSubmit = async data => {
   
         const todo ={
@@ -24,9 +30,17 @@ const Todo = () => {
           }
           console.log('todo', inserted)
         })
+  };
+  const {data: works, isLoading} = useQuery('work', () => fetch('http://localhost:5000/work')
+  .then(res => res.json()))
+
+  if(isLoading){
+    return
   }
   return (
-    <div className='grid justify-items-center items-center my-12'>
+   <div>
+    <h1 className='text-center mt-5 text-3xl text-amber-400 font-bold'>Your Daily Task</h1>
+     <div className='grid justify-items-center items-center my-12'>
       <form onSubmit={handleSubmit(onSubmit)}>
       <input 
       type="text" 
@@ -39,6 +53,14 @@ const Todo = () => {
       <input className='btn btn-outline btn-warning mt-3' type="submit" value="Add"/>
       </form>
     </div>
+    <div className='my-5 px-10'>
+      {
+         works.map(task => <TodoList
+         task={task}
+         ></TodoList>)
+      }
+    </div>
+   </div>
   );
 };
 
