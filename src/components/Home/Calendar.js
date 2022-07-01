@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import {  ClassNames, DayPicker } from 'react-day-picker';
+import {  classNameNames, DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format } from 'date-fns';
 import styles from 'react-day-picker/dist/style.module.css';
 
 const Calendar = () => {
   const [date, setDate] = useState(new Date());
-  const classNames: ClassNames = {
+  const classNameNames: classNameNames = {
     ...styles,
     head: 'custom-head'
   };
@@ -19,7 +19,7 @@ const Calendar = () => {
           li: {color: 'white'}
         }}
        mode="single"
-       classNames={classNames}
+       classNameNames={classNameNames}
        selected={date}
        onSelect={setDate}
       ></DayPicker>

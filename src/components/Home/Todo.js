@@ -15,7 +15,7 @@ const Todo = () => {
         const todo ={
           work: data.todo
         }
-        fetch('http://localhost:5000/work', {
+        fetch('https://arctic-smarties-47740.herokuapp.com/work', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
@@ -31,7 +31,7 @@ const Todo = () => {
           console.log('todo', inserted)
         })
   };
-  const {data: works, isLoading} = useQuery('work', () => fetch('http://localhost:5000/work')
+  const {data: works, isLoading} = useQuery('work', () => fetch('https://arctic-smarties-47740.herokuapp.com/work')
   .then(res => res.json()))
 
   if(isLoading){
@@ -46,7 +46,7 @@ const Todo = () => {
       type="text" 
       name='todo' 
       placeholder="Todo list" 
-      class="input input-bordered input-warning w-full max-w-xs text-xl text-white"
+      className="input input-bordered input-warning w-full max-w-xs text-xl text-white"
       {...register("todo", 
       { required: true }
       )} />

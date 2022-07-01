@@ -3,11 +3,11 @@ import React from 'react';
 const TodoList = ({task}) => {
   const {work} = task;
   return (
-    <div class="alert alert-warning shadow-lg mt-5">
+    <div className="alert alert-warning shadow-lg mt-5">
        <span className='text-pink-400 text-3xl font-bold md:text-center'>{work}</span>
-      <div class="form-control">
-     <label class="cursor-pointer label">
-    <input type="checkbox" checked="checked" class="checkbox checkbox-secondary" />
+      <div className="form-control">
+     <label className="cursor-pointer label">
+    <input type="checkbox" checked="checked" className="checkbox checkbox-secondary" />
   </label>
 </div>
   </div>
